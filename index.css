@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Helvetica Neue", Arial, sans-serif;
+  --font-serif: Georgia, serif;
+  
+  --color-navy-950: #030814;
+  --color-navy-900: #0A1E3B;
+  --color-navy-800: #102d55;
+  --color-navy-700: #163d72;
+  --color-navy-600: #1e5096;
+  
+  --color-gold-300: #ebd076;
+  --color-gold-400: #dcb33d;
+  --color-gold-500: #C5A02A;
+  --color-gold-600: #a38421;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-sans antialiased text-slate-800 bg-[#F8FAFC];
+}
+
+/* Glassmorphism utilities */
+.glass-panel {
+  @apply bg-white/10 backdrop-blur-md border border-white/20;
+}
+
+.glass-card {
+  @apply bg-white/90 backdrop-blur-md border border-slate-200/60 shadow-[0_8px_30px_rgb(0,0,0,0.06)];
+}
+
+/* Subtle Animated Glow */
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.05); }
+}
+.animate-glow {
+  animation: pulse-glow 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
